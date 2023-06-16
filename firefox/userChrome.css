@@ -1,0 +1,73 @@
+#pageActionSeparator,
+#pageActionButton,
+#toolbar-menubar,
+#tracking-protection-icon-container,
+#identity-icon-box,
+#star-button-box {
+	display: none !important;
+}
+
+
+/* remove buttons */
+#alltabs-button {
+  display: none;
+  visibility: hidden;
+}
+
+/* light/dark mode colours */
+@media(prefers-color-scheme: dark) {
+  #urlbar-input-container, #remote-control-box {
+    background-color: black !important;
+  }
+  
+  #urlbar-background {
+    background-color: black !important;
+  }
+  
+  #titlebar, #nav-bar, #PersonalToolbar {
+    background-color: black !important;
+  }
+
+  #tabbrowser-tabs, #TabsToolbar, .toolbar-items, #TabsToolbar-customization-target {
+    background-color: black !important;
+  }
+}
+
+@media(prefers-color-scheme: light) {
+  #urlbar-input-container, #remote-control-box {
+    background-color: white !important;
+    box-shadow: 0;
+  }
+
+  #urlbar-input-container:is([focused="true"], [open]) {
+    background-color: white !important;
+    text-shadow: none !important;
+    box-shadow: 0px 0px !important;
+  }
+
+  #urlbar-background {
+    background-color: white !important;
+  }
+  
+  #titlebar, #nav-bar, #PersonalToolbar {
+    background-color: white !important;
+  }
+
+  #tabbrowser-tabs, #TabsToolbar, .toolbar-items, #TabsToolbar-customization-target {
+    background-color: white !important;
+  }
+}
+
+/* remove outline colour around url bar */
+#urlbar:is([focused="true"]) > #urlbar-background, #seachbar:focus-within {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  outline: none !important;
+}
+
+/* change font! */
+#urlbar {
+  font-family: "BlexMono Nerd Font Mono" !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+}
