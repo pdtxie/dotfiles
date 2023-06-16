@@ -1,6 +1,6 @@
 # dotfiles
 
-- colour scheme: blazer
+- colour scheme: blazer (theme files for nvim, sway, foot, etc were created manually)
 - font: IBM Plex Mono (patched nerd font)
 - cursors: [macos monterey cursors (white)](https://github.com/ful1e5/apple_cursor)
   - add cursors in `/usr/share/icons/default`, `~/.config/gtk-3.0/settings.ini`, and set with `gsettings`
