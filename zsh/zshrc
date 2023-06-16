@@ -1,0 +1,51 @@
+export MOZ_ENABLE_WAYLAND=1
+export XDG_CURRENT_DESKTOP=sway
+
+# export VISUAL=nvim
+# export EDITOR=nvim
+
+path+=/opt/Bitwarden
+export PATH
+
+# NEWLINE=$'\n'
+export PROMPT="%F{blue}%~%f  "
+
+if [[ "$(tty)" == "/dev/tty1" ]]
+    then
+        exec dbus-run-session sway
+fi
+
+
+tere() {
+    local result=$(command tere "$@")
+    [ -n "$result" ] && cd -- "$result"
+}
+
+
+zstyle :compinstall filename '/home/tim/.zshrc'
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+
+bindkey "^[[3~" delete-char
+
+autoload -Uz compinit
+compinit
+
+HISTFILE=~/.histfile
+HISTSIZE=500
+SAVEHIST=10
+
+source ~/.zsh/plugins/fsh/fast-syntax-highlighting.plugin.zsh
+
+alias vi=nvim
+alias vim=nvim
+alias clag=clang
+alias sudo=doas
+alias open=pcmanfm
+
+
+
+foo() RBUFFER+=ls
+zle && zle widget foo
