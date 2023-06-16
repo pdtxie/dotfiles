@@ -9,7 +9,7 @@
 
 ### config files
 - zsh
-	- use .zsh/plugins/... for plugins
+  - use .zsh/plugins/... for plugins
 - sway
 - foot
 - fontconfig
@@ -23,3 +23,6 @@ requires:
 - grim, slurp, wl-copy
 - fzf
 - tere
+
+for screensharing:
+- xdg-desktop-portal-wlr (and a pipewire launcher, eg: `gentoo-pipewire-launcher`)

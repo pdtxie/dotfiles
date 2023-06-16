@@ -27,9 +27,14 @@ exec {
 
 # cursor
     swaymsg seat seat0 xcursor_theme macOS-Monterey-White 24
-    /usr/libexec/xdg-desktop-portal-wlr -l DEBUG &> ~/.xdg-wlr-log
+
+    # wayland screenshare
+    # /usr/libexec/xdg-desktop-portal-wlr -l DEBUG &> ~/.xdg-wlr-log
+    /usr/libexec/xdg-desktop-portal-wlr
     dbus-update-activation-environment --all --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-    gentoo-pipewire-launcher &> ~/.pw-log
+    # (gentoo specific, but any pipewire launcher will do)
+    # gentoo-pipewire-launcher &> ~/.pw-log
+    gentoo-pipewire-launcher
 }
 # clipman
 exec rm ~/.local/share/clipman.json
