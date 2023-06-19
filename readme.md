@@ -5,7 +5,6 @@
 - cursors: [macos monterey cursors (white)](https://github.com/ful1e5/apple_cursor)
 
 
-
 ### config files
 - zsh
   - use .zsh/plugins/... for plugins
@@ -17,7 +16,7 @@
 
 - neovim
 
-requires:
+#### requires:
 - bemenu
 - grim, slurp, wl-copy
 - fzf
@@ -25,3 +24,7 @@ requires:
 
 for screensharing:
 - xdg-desktop-portal-wlr (and a pipewire launcher, eg: `gentoo-pipewire-launcher`)
+
+for airplay server:
+- uxplay (needs mdns)
+- avahi

@@ -1,5 +1,5 @@
 vim.o.number = true
-vim.o.colorcolumn = "80"
+-- vim.o.colorcolumn = "80"
 vim.o.mouse = "a"
 vim.o.relativenumber = true
 vim.o.tabstop = 4
@@ -69,7 +69,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 --require("colorscheme")
 vim.cmd([[
-    colorscheme colorscheme
+colorscheme colorscheme
 ]])
 
 require("packer").startup(function(use)
@@ -84,7 +84,7 @@ require("packer").startup(function(use)
 	-- use({"~/exported-color/lush-template", config = function() vim.cmd[[colorscheme lush_template]] end})
 
 	-- use({"./lua/colorscheme", config = function()
- --        vim.cmd[[colorscheme colorscheme]]
+	-- vim.cmd[[colorscheme colorscheme]]
 	-- end})
 
 	-- comment plugin
@@ -384,10 +384,10 @@ require("packer").startup(function(use)
 					fields = { "kind", "abbr", "menu" },
 					format = function(entry, vim_item)
 						local kind =
-							require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+						require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
 						local strings = vim.split(kind.kind, "%s", { trimempty = false })
 						kind.kind = " " .. strings[1] .. " "
-						kind.menu = "    (" .. strings[2] .. ")"
+						kind.menu = "	(" .. strings[2] .. ")"
 
 						return kind
 					end,
@@ -437,8 +437,8 @@ require("packer").startup(function(use)
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
 					{ name = "path" },
-				}, {
-					{ name = "cmdline" },
+					}, {
+						{ name = "cmdline" },
 				}),
 			})
 
@@ -558,7 +558,7 @@ require("packer").startup(function(use)
 				end
 
 				local message =
-					string.format("%s  [%s][%s] %s", icon, diagnostic.code, diagnostic.source, diagnostic.message)
+				string.format("%s  [%s][%s] %s", icon, diagnostic.code, diagnostic.source, diagnostic.message)
 				return message
 			end
 
@@ -663,7 +663,7 @@ require("packer").startup(function(use)
 				"tsserver",
 				"eslint",
 				"tailwindcss",
-			}) do
+				}) do
 				lspconfig[server].setup({ capabilities = capabilities, on_attach = on_attach })
 			end
 			lspconfig.texlab.setup({
@@ -723,9 +723,9 @@ require("packer").startup(function(use)
 				local isTabs = not vim.o.expandtab
 				return (
 					isTabs
-						and ((vim.o.shiftwidth > 0 and vim.o.shiftwidth ~= vim.o.tabstop) and "Tabs/Spaces" or "Tabs")
+					and ((vim.o.shiftwidth > 0 and vim.o.shiftwidth ~= vim.o.tabstop) and "Tabs/Spaces" or "Tabs")
 					or "Spaces"
-				)
+					)
 					.. ": "
 					.. tostring(vim.o.shiftwidth > 0 and vim.o.shiftwidth or vim.o.tabstop)
 			end
@@ -749,7 +749,7 @@ require("packer").startup(function(use)
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
-					theme = "catppuccin",
+					theme = "blazer",
 					section_separators = { left = "", right = "" },
 					component_separators = { left = "", right = "" },
 					disabled_filetypes = { "coc-explorer" },

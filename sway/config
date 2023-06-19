@@ -27,6 +27,7 @@ exec {
 
 # cursor
     swaymsg seat seat0 xcursor_theme macOS-Monterey-White 24
+    uxplay -vs waylandsink -s 1668x2388@60 -fps 60 -as 0 -n gentoo
 
     # wayland screenshare
     # /usr/libexec/xdg-desktop-portal-wlr -l DEBUG &> ~/.xdg-wlr-log
@@ -172,8 +173,7 @@ bar {
     position top
 
     font "BlexMonoSmBld Nerd Font Mono Semi-Bold Bold" 10
-    # status_command ./scripts/bar  WHY DOESN'T THIS WORK ? ? ? ?
-    status_command ~/Documents/swaybar/a.out
+    status_command ~/.config/sway/scripts/bar
 
     colors {
         statusline #D9D9D9
