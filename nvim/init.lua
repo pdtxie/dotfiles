@@ -67,6 +67,10 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	command = "source <afile> | PackerCompile",
 })
 
+--require("colorscheme")
+vim.cmd([[
+    colorscheme colorscheme
+]])
 
 require("packer").startup(function(use)
 	use("wbthomason/packer.nvim") -- Package manager
@@ -74,14 +78,14 @@ require("packer").startup(function(use)
 
 	use("lewis6991/impatient.nvim") -- Plugin cache
 
-	use("rktjmp/lush.nvim")
-	use("rktjmp/shipwright.nvim")
+	-- use("rktjmp/lush.nvim")
+	-- use("rktjmp/shipwright.nvim")
 
-	use({"~/exported-color/lush-template", config = function() vim.cmd[[colorscheme lush_template]] end})
+	-- use({"~/exported-color/lush-template", config = function() vim.cmd[[colorscheme lush_template]] end})
 
-	--[[ use({"~/exported-color", config = function()
-        vim.cmd[[colorscheme colorscheme]]
-	-- end}) ]]
+	-- use({"./lua/colorscheme", config = function()
+ --        vim.cmd[[colorscheme colorscheme]]
+	-- end})
 
 	-- comment plugin
 	use({

@@ -34,7 +34,7 @@ exec {
     dbus-update-activation-environment --all --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
     # (gentoo specific, but any pipewire launcher will do)
     # gentoo-pipewire-launcher &> ~/.pw-log
-    gentoo-pipewire-launcher
+    gentoo-pipewire-launcher &
 }
 # clipman
 exec rm ~/.local/share/clipman.json
@@ -172,6 +172,7 @@ bar {
     position top
 
     font "BlexMonoSmBld Nerd Font Mono Semi-Bold Bold" 10
+    # status_command ./scripts/bar  WHY DOESN'T THIS WORK ? ? ? ?
     status_command ~/Documents/swaybar/a.out
 
     colors {
