@@ -758,8 +758,26 @@ require("packer").startup(function(use)
 				},
 				sections = {
 					lualine_a = { { "mode", fmt = mode_format } },
-					lualine_b = { "filename", "branch", "diff", { "diagnostics", sources = { "nvim_diagnostic" } } },
-					lualine_c = {},
+					lualine_b = { 
+						"filename", 
+						"branch", 
+						{ 
+							"diff",
+							diff_color = {
+								added = { fg = '#7AB87A' },
+								modified = { fg = '#B8B87A' },
+								removed = { fg = '#B87A7A' }
+							}
+						}
+					},
+					lualine_c = {
+						{ 
+							"diagnostics",
+							sources = { "nvim_diagnostic" },
+							sections = { "error", "warn" },
+							diagnostics_color = { error = { fg = '#B87A7A' }, warn = { fg = '#B8B87A' } }
+						} 
+					},
 					-- lualine_x = {{'o:encoding', fmt = string.upper, cond = realfile}, {'o:fileformat', fmt = fmt_filefmt, cond = realfile}, {indentation, cond = realfile}, lsp_names},
 					lualine_x = { {} },
 					lualine_y = { "filetype", lsp },
