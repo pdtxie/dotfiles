@@ -8,12 +8,14 @@ set $up k
 set $right l
 
 # colours!
-set $accent #7AB8B8
-set $accentLight #BDDBDB
+# set $accent #7AB8B8
+# set $accentLight #BDDBDB
 
-set $light #D9D9D9
-set $dark #262626
-set $grey #7F7F7F
+set $light #F5F5FA
+set $dark #15151F
+set $grey #7A7A7D
+
+set $bg2 #2B2B40
 
 # white theme
 set $accent $grey
@@ -45,7 +47,7 @@ exec wl-paste -t text --watch clipman store --no-persist
 
 ## control-based
 bindsym Control+q kill
-bindsym Control+Space exec bemenu-run --fn "BlexMonoSmBld Nerd Font Mono Semi-Bold 10" --tf "#FFFFFF" --hf "#7AB8B8" -H "24"
+bindsym Control+Space exec bemenu-run --fn "BlexMono Nerd Font Mono Semi-Bold 10" --tb "#15151F" --tf "#BDBDDB" --fb "#15151F" --nf "#F5F5FA" --hf "#7A7AB8" -H "24"
 bindsym Control+Shift+Space exec foot -a "foot-fzf" ~/.config/sway/scripts/foot-fzf.sh
 
 for_window [app_id="foot-fzf"] floating enable
@@ -54,7 +56,7 @@ for_window [app_id="foot-fzf"] floating enable
 bindsym Control+Shift+3 exec grim - | wl-copy -t image/png
 bindsym Control+Shift+4 exec grim -g "$(slurp)" - | wl-copy -t image/png
 
-bindsym Control+$mod+c exec clipman pick -t bemenu -T'--fn "BlexMonoSmBld Nerd Font Mono Semi-Bold 10" --tf "#FFFFFF" --hf "#7AB8B8" -H "24"'
+bindsym Control+$mod+c exec clipman pick -t bemenu -T'--fn "BlexMono Nerd Font Mono Semi-Bold 10" --tb "#15151F" --tf "#BDBDDB" --fb "#15151F" --ff "#F5F5FA" --hf "#7A7AB8" -H "24"'
 
 
 # mod-based other
@@ -155,12 +157,12 @@ include /etc/sway/config.d/*
 
 
 ### styling
-font "BlexMonoSmBld Nerd Font Mono Semi-Bold" 10
+font "BlexMono Nerd Font Mono Semi-Bold" 10
 
 ## colours
-client.focused #262626 #262626 $accentLight $accentLight
-client.focused_inactive #262626 #262626 $accent $accentLight
-client.unfocused #262626 #262626 $accent $accentLight
+client.focused $bg2 $bg2 $accentLight $accentLight
+client.focused_inactive $bg2 $bg2 $accent $accentLight
+client.unfocused $bg2 $bg2 $accent $accentLight
 client.urgent #DBBDBD #DBBDBD $dark $accentLight
 
 # filled
@@ -172,16 +174,16 @@ client.urgent #DBBDBD #DBBDBD $dark $accentLight
 bar {
     position top
 
-    font "BlexMonoSmBld Nerd Font Mono Semi-Bold Bold" 10
+    font "BlexMono Nerd Font Mono Semi-Bold" 10
     status_command ~/.config/sway/scripts/bar
 
     colors {
-        statusline #D9D9D9
-        background #000000
+        statusline $light
+        background $dark
 
-        focused_workspace #262626 #262626 $accentLight
-        active_workspace #262626 #262626 $accent
-        inactive_workspace #000000 #000000 $accent
+        focused_workspace $bg2 $bg2 $accentLight
+        active_workspace $bg2 $bg2 $accent
+        inactive_workspace $dark $dark $accent
         urgent_workspace #DBBDBD #DBBDBD $dark
 
 	# focused_workspace $accentLight $accentLight #000000
