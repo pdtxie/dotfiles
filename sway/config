@@ -47,7 +47,7 @@ exec wl-paste -t text --watch clipman store --no-persist
 
 ## control-based
 bindsym Control+q kill
-bindsym Control+Space exec bemenu-run --fn "BlexMono Nerd Font Mono Semi-Bold 10" --tb "#15151F" --tf "#BDBDDB" --fb "#15151F" --nf "#F5F5FA" --hf "#7A7AB8" -H "24"
+bindsym Control+Space exec bemenu-run --fn "BlexMono Nerd Font Mono Semi-Bold 10" -H "24" --tf "#BDBDDB" --ff "#BDBDDB" --cf "#BDBDDB" --nf "#F5F5FA" --af "#F5F5FA" --hf "#7A7AB8" --tb "$dark" --fb "$dark" --nb "$dark" --hb "$dark" --ab "$dark"
 bindsym Control+Shift+Space exec foot -a "foot-fzf" ~/.config/sway/scripts/foot-fzf.sh
 
 for_window [app_id="foot-fzf"] floating enable
@@ -56,7 +56,7 @@ for_window [app_id="foot-fzf"] floating enable
 bindsym Control+Shift+3 exec grim - | wl-copy -t image/png
 bindsym Control+Shift+4 exec grim -g "$(slurp)" - | wl-copy -t image/png
 
-bindsym Control+$mod+c exec clipman pick -t bemenu -T'--fn "BlexMono Nerd Font Mono Semi-Bold 10" --tb "#15151F" --tf "#BDBDDB" --fb "#15151F" --ff "#F5F5FA" --hf "#7A7AB8" -H "24"'
+bindsym Control+$mod+c exec clipman pick -t bemenu -T'--fn "BlexMono Nerd Font Mono Semi-Bold 10" -H "24" --tf "#BDBDDB" --ff "#BDBDDB" --cf "#BDBDDB" --nf "#F5F5FA" --af "#F5F5FA" --hf "#7A7AB8" --tb "$dark" --fb "$dark" --nb "$dark" --hb "$dark" --ab "$dark"'
 
 
 # mod-based other
