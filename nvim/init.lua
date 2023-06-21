@@ -17,18 +17,26 @@ vim.o.timeoutlen = 300
 vim.go.laststatus = 3 -- 1 statusline for every window
 vim.o.inccommand = "split" -- Incremental rename - show changes in window
 vim.opt.list = true
-
 vim.opt.smd = false
+
+-- custom keymaps
+vim.keymap.set({"n", "i"}, "<C-k>", "<cmd>move -2<cr>")
+vim.keymap.set({"n", "i"}, "<C-j>", "<cmd>move +1<cr>")
+vim.keymap.set("v", "<C-k>", "xkP`[V`]")
+vim.keymap.set("v", "<C-j>", "xp`[V`]")
+
+vim.keymap.set("n", "<C-h>", "xhP")
+vim.keymap.set("n", "<C-l>", "xp")
+vim.keymap.set("v", "<C-h>", "dhP`[1v")
+vim.keymap.set("v", "<C-l>", "dp`[1v")
 
 if vim.fn.has("termguicolors") == 1 then
 	vim.o.termguicolors = true
 end
 
-vim.cmd([[
-	filetype plugin on
-]])
+vim.cmd([[filetype plugin on]])
 
-vim.g.python_recommended_style = 0 -- Don't override expandtab for python
+-- vim.g.python_recommended_style = 0 -- Don't override expandtab for python
 vim.g.leave_my_textwidth_alone = 1 -- Some default gentoo plugin
 
 vim.g.tex_flavor = "latex"
@@ -49,6 +57,8 @@ mode_format = function(str)
 		return "V-L"
 	elseif str == "V-BLOCK" then
 		return "V-B"
+	elseif str == "COMMAND" then
+		return "ƒ"
 	else
 		return str:sub(1, 1)
 	end
@@ -638,7 +648,7 @@ require("packer").startup(function(use)
 				vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 				vim.keymap.set("n", "K", Peek, bufopts)
 				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-				vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+				-- vim.keymap.set("n", "<C-K>", vim.lsp.buf.signature_help, bufopts)
 				vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
 				--				vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 				vim.keymap.set("n", "<space>rn", ":IncRename ", bufopts)
