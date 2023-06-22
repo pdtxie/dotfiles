@@ -22,6 +22,11 @@ set $accent $grey
 set $accentLight $light
 
 
+# floating
+for_window [app_id="pcmanfm"] floating enable
+for_window [class="Bitwarden"] floating enable
+
+
 
 # idle + sleep
 exec {
