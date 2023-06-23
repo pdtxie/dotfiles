@@ -32,7 +32,7 @@ for_window [class="Bitwarden"] floating enable
 exec {
     swayidle -w timeout 600 'swaylock -f -c 000000' timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' before-sleep 'swaylock -f -c 000000'
 
-# cursor
+    # cursor
     swaymsg seat seat0 xcursor_theme macOS-Monterey-White 24
     uxplay -vs waylandsink -s 1668x2388@60 -fps 60 -as 0 -n gentoo
 
@@ -43,10 +43,13 @@ exec {
     # (gentoo specific, but any pipewire launcher will do)
     # gentoo-pipewire-launcher &> ~/.pw-log
     gentoo-pipewire-launcher &
+
+
+    # clipman
+    rm ~/.local/share/clipman.json
+    wl-paste -t text --watch clipman store --no-persist
+
 }
-# clipman
-exec rm ~/.local/share/clipman.json
-exec wl-paste -t text --watch clipman store --no-persist
 
 ### bindings
 
@@ -60,6 +63,8 @@ for_window [app_id="foot-fzf"] floating enable
 
 bindsym Control+Shift+3 exec grim - | wl-copy -t image/png
 bindsym Control+Shift+4 exec grim -g "$(slurp)" - | wl-copy -t image/png
+bindsym Control+Shift+5 exec wfr="$RANDOM" && wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f ".recording"${wfr}".mp4" && echo -n "file:///home/tim/.recording.mp4" | wl-copy -t text/uri-list && rm "~/.recording"${wfr}".mp4"
+bindsym Control+Shift+$mod+5 exec foot wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f ".recording.mp4" && pcmanfm ~/
 
 bindsym Control+$mod+c exec clipman pick -t bemenu -T'--fn "BlexMono Nerd Font Mono Semi-Bold 10" -H "24" --tf "#BDBDDB" --ff "#BDBDDB" --cf "#BDBDDB" --nf "#F5F5FA" --af "#F5F5FA" --hf "#7A7AB8" --tb "$dark" --fb "$dark" --nb "$dark" --hb "$dark" --ab "$dark"'
 
