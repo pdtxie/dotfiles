@@ -214,13 +214,12 @@ output * {
 output DP-2 {
     position 0 0
     transform 270
-    background /home/tim/.config/wallpapers/white-l.png fill #000000
+    background /home/tim/.config/wallpapers/lake-l.png fill #000000
 }
 
 output DP-1 {
     position 1440 752
-    background /home/tim/.config/wallpapers/white-r.png fill #000000
-    scale 2.0
+    background /home/tim/.config/wallpapers/lake-r.png fill #000000
 }
 
 input type:keyboard {
