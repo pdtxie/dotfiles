@@ -218,7 +218,7 @@ output DP-2 {
 }
 
 output DP-1 {
-    position 1440 752
+    position 1440 730
     background /home/tim/.config/wallpapers/lake-r.png fill #000000
 }
 
