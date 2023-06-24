@@ -8,23 +8,21 @@ set $up k
 set $right l
 
 # colours!
-# set $accent #7AB8B8
-# set $accentLight #BDDBDB
-
 set $light #F5F5FA
 set $dark #15151F
 set $grey #7A7A7D
 
 set $bg2 #2B2B40
 
-# white theme
 set $accent $grey
 set $accentLight $light
+
 
 
 # floating
 for_window [app_id="pcmanfm"] floating enable
 for_window [class="Bitwarden"] floating enable
+for_window [app_id="foot-fzf"] floating enable
 
 
 
@@ -44,41 +42,49 @@ exec {
     # gentoo-pipewire-launcher &> ~/.pw-log
     gentoo-pipewire-launcher &
 
-
     # clipman
     rm ~/.local/share/clipman.json
     wl-paste -t text --watch clipman store --no-persist
-
 }
 
-### bindings
 
-## control-based
+
+### bindings
+## macos-inspired keybinds (quit, search/clipboard, screenshot/screen record)
 bindsym Control+q kill
+
 bindsym Control+Space exec bemenu-run --fn "BlexMono Nerd Font Mono Semi-Bold 10" -H "24" --tf "#BDBDDB" --ff "#BDBDDB" --cf "#BDBDDB" --nf "#F5F5FA" --af "#F5F5FA" --hf "#7A7AB8" --tb "$dark" --fb "$dark" --nb "$dark" --hb "$dark" --ab "$dark"
 bindsym Control+Shift+Space exec foot -a "foot-fzf" ~/.config/sway/scripts/foot-fzf.sh
 
-for_window [app_id="foot-fzf"] floating enable
 
+bindsym Control+Shift+1         exec ~/.config/sway/scripts/ss-window-cp.sh
+bindsym Control+Shift+$mod+1    exec ~/.config/sway/scripts/ss-window-sw.sh
 
-bindsym Control+Shift+3 exec grim - | wl-copy -t image/png
-bindsym Control+Shift+4 exec grim -g "$(slurp)" - | wl-copy -t image/png
-bindsym Control+Shift+5 exec wfr="$RANDOM" && wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f ".recording"${wfr}".mp4" && echo -n "file:///home/tim/.recording.mp4" | wl-copy -t text/uri-list && rm "~/.recording"${wfr}".mp4"
-bindsym Control+Shift+$mod+5 exec foot wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f ".recording.mp4" && pcmanfm ~/
+bindsym Control+Shift+2         exec grim - | wl-copy -t image/png
+bindsym Control+Shift+$mod+2    exec grim - | swappy -f -
+
+bindsym Control+Shift+3         exec grim -g "$(slurp -o)" - | wl-copy -t image/png
+bindsym Control+Shift+$mod+3    exec grim -g "$(slurp -o)" - | swappy -f -
+
+bindsym Control+Shift+4         exec grim -g "$(slurp)" - | wl-copy -t image/png
+bindsym Control+Shift+$mod+4    exec grim -g "$(slurp)" - | swappy -f -
+
+bindsym Control+Shift+5         exec wfr="$RANDOM" && wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f ".recording"${wfr}".mp4" && echo -n "file:///home/tim/.recording.mp4" | wl-copy -t text/uri-list && rm "~/.recording"${wfr}".mp4"
+bindsym Control+Shift+$mod+5    exec foot wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f ".recording.mp4" && pcmanfm ~/
+
 
 bindsym Control+$mod+c exec clipman pick -t bemenu -T'--fn "BlexMono Nerd Font Mono Semi-Bold 10" -H "24" --tf "#BDBDDB" --ff "#BDBDDB" --cf "#BDBDDB" --nf "#F5F5FA" --af "#F5F5FA" --hf "#7A7AB8" --tb "$dark" --fb "$dark" --nb "$dark" --hb "$dark" --ab "$dark"'
 
 
-# mod-based other
+
+## swaywm
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'kill?' -B 'Y' 'swaymsg exit'
-
 floating_modifier $mod normal
-
-
-
-## mod-based general
 bindsym $mod+Return exec foot
+focus_follows_mouse no
+include /etc/sway/config.d/*
+
 
 
 ## movement
@@ -117,6 +123,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 
+
 ## layout
 bindsym $mod+b splith
 bindsym $mod+v splitv
@@ -129,6 +136,8 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
 
 bindsym $mod+a focus parent
+
+
 
 ## floating
 bindsym $mod+space floating toggle
@@ -145,7 +154,6 @@ bindsym $mod+minus scratchpad show
 ## resize
 bindsym $mod+r mode "resize"
 
-
 mode "resize" {
     bindsym $left resize shrink width 15px
     bindsym $right resize grow width 15px
@@ -159,15 +167,10 @@ mode "resize" {
 }
 
 
-# other
-focus_follows_mouse no
-include /etc/sway/config.d/*
-
-
-
 
 ### styling
 font "BlexMono Nerd Font Mono Semi-Bold" 10
+
 
 ## colours
 client.focused $bg2 $bg2 $accentLight $accentLight
@@ -175,10 +178,6 @@ client.focused_inactive $bg2 $bg2 $accent $accentLight
 client.unfocused $bg2 $bg2 $accent $accentLight
 client.urgent #DBBDBD #DBBDBD $dark $accentLight
 
-# filled
-# client.focused $accentLight $accentLight #000000
-# client.focused_inactive #262626 #262626 $accentLight
-# client.unfocused #262626 #262626 #7f7f7f
 
 ## bar
 bar {
@@ -195,18 +194,11 @@ bar {
         active_workspace $bg2 $bg2 $accent
         inactive_workspace $dark $dark $accent
         urgent_workspace #DBBDBD #DBBDBD $dark
-
-	# focused_workspace $accentLight $accentLight #000000
-	# active_workspace #262626 #262626 $accentLight
-        # inactive_workspace #262626 #262626 #accent
-
     }
 }
 
 
-
-
-# i/o
+### i/o
 output * {
     adaptive_sync on
 }
