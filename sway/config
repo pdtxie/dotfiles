@@ -20,7 +20,7 @@ set $accentLight $light
 
 
 # floating
-for_window [app_id="pcmanfm"] floating enable
+for_window [app_id="thunar"] floating enable
 for_window [class="Bitwarden"] floating enable
 for_window [app_id="foot-fzf"] floating enable
 
@@ -61,13 +61,13 @@ bindsym Control+Shift+1         exec ~/.config/sway/scripts/ss-window-cp.sh
 bindsym Control+Shift+$mod+1    exec ~/.config/sway/scripts/ss-window-sw.sh
 
 bindsym Control+Shift+2         exec grim - | wl-copy -t image/png
-bindsym Control+Shift+$mod+2    exec grim - | swappy -f -
+bindsym Control+Shift+$mod+2    exec grim - | swappy -f - -o "~/.screenshot.png"
 
 bindsym Control+Shift+3         exec grim -g "$(slurp -o)" - | wl-copy -t image/png
-bindsym Control+Shift+$mod+3    exec grim -g "$(slurp -o)" - | swappy -f -
+bindsym Control+Shift+$mod+3    exec grim -g "$(slurp -o)" - | swappy -f - -o "~/.screenshot.png"
 
 bindsym Control+Shift+4         exec grim -g "$(slurp)" - | wl-copy -t image/png
-bindsym Control+Shift+$mod+4    exec grim -g "$(slurp)" - | swappy -f -
+bindsym Control+Shift+$mod+4    exec grim -g "$(slurp)" - | swappy -f - -o "~/.screenshot.png"
 
 bindsym Control+Shift+5         exec wfr="$RANDOM" && wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f ".recording"${wfr}".mp4" && echo -n "file:///home/tim/.recording.mp4" | wl-copy -t text/uri-list && rm "~/.recording"${wfr}".mp4"
 bindsym Control+Shift+$mod+5    exec foot wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f ".recording.mp4" && pcmanfm ~/

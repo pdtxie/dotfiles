@@ -40,4 +40,4 @@ alias vi=nvim
 alias vim=nvim
 alias clag=clang
 alias sudo=doas
-alias open=pcmanfm
+alias open=thunar
