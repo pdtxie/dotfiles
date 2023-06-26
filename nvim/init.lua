@@ -30,6 +30,11 @@ vim.keymap.set("n", "<C-l>", "xp")
 vim.keymap.set("v", "<C-h>", "dhP`[1v")
 vim.keymap.set("v", "<C-l>", "dp`[1v")
 
+vim.keymap.set("v", "<C-c>", '"+y<cr>')
+vim.keymap.set({"v", "n"}, "<C-a>", "ggVG")
+vim.keymap.set("i", "<C-a>", "<esc>ggVG")
+
+
 if vim.fn.has("termguicolors") == 1 then
 	vim.o.termguicolors = true
 end
