@@ -7,6 +7,7 @@
 - font: IBM Plex Mono [(patched nerd font)](https://github.com/ryanoasis/nerd-fonts)
 - cursors: [macos monterey cursors (white)](https://github.com/ful1e5/apple_cursor)
 
+(old dotfiles [here](https://github.com/pdtxie/dotfiles-old))
 
 ### config files
 - zsh
