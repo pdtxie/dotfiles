@@ -1,0 +1,3 @@
+[submodule "blazer-gtk3.0"]
+	path = blazer-gtk3.0
+	url = git@github.com:pdtxie/blazer-gtk3.0.git
