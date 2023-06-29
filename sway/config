@@ -23,6 +23,7 @@ set $accentLight $light
 for_window [app_id="thunar"] floating enable
 for_window [class="Bitwarden"] floating enable
 for_window [app_id="foot-fzf"] floating enable
+for_window [class="Element"] floating enable
 
 
 
@@ -66,6 +67,7 @@ bindsym Control+Shift+$mod+2    exec grim - | swappy -f - -o "~/.screenshot.png"
 
 bindsym Control+Shift+3         exec grim -g "$(slurp -o)" - | wl-copy -t image/png
 bindsym Control+Shift+$mod+3    exec grim -g "$(slurp -o)" - | swappy -f - -o "~/.screenshot.png"
+# bindsym Control+Shift+$mod+3    exec grim -g "1440,730 2560x1440" - | swappy -f - -o "~/.screenshot.png"
 
 bindsym Control+Shift+4         exec grim -g "$(slurp)" - | wl-copy -t image/png
 bindsym Control+Shift+$mod+4    exec grim -g "$(slurp)" - | swappy -f - -o "~/.screenshot.png"
