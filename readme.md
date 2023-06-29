@@ -1,6 +1,7 @@
 # dotfiles
 
-![swappy-20230628_204141](https://github.com/pdtxie/dotfiles/assets/65262710/00b63c5e-f08e-42f5-911e-21e3f004eb54)
+![neofetch](https://github.com/pdtxie/dotfiles/assets/65262710/00b63c5e-f08e-42f5-911e-21e3f004eb54)
+![nvim](https://github.com/pdtxie/dotfiles/assets/65262710/504339c6-2024-4224-aff1-3aae8834a46c)
 
 - colour scheme: blazer (theme files for nvim, sway, foot, gtk, etc were created manually)
 - font: IBM Plex Mono [(patched nerd font)](https://github.com/ryanoasis/nerd-fonts)
