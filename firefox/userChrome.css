@@ -1,12 +1,13 @@
+/* INFO: general interface */
+/* remove firefox garbage */
 #pageActionSeparator,
 #pageActionButton,
 #toolbar-menubar,
 #tracking-protection-icon-container,
 #identity-icon-box,
 #star-button-box {
-	display: none !important;
+  display: none !important;
 }
-
 
 /* remove buttons */
 #alltabs-button {
@@ -14,48 +15,13 @@
   visibility: hidden;
 }
 
-/* light/dark mode colours */
-@media(prefers-color-scheme: dark) {
-  #urlbar-input-container, #remote-control-box {
-    background-color: black !important;
-  }
-  
-  #urlbar-background {
-    background-color: black !important;
-  }
-  
-  #titlebar, #nav-bar, #PersonalToolbar {
-    background-color: black !important;
-  }
-
-  #tabbrowser-tabs, #TabsToolbar, .toolbar-items, #TabsToolbar-customization-target {
-    background-color: black !important;
-  }
+#urlbar-input-container, #remote-control-box {
+  box-shadow: 0;
 }
 
-@media(prefers-color-scheme: light) {
-  #urlbar-input-container, #remote-control-box {
-    background-color: white !important;
-    box-shadow: 0;
-  }
-
-  #urlbar-input-container:is([focused="true"], [open]) {
-    background-color: white !important;
-    text-shadow: none !important;
-    box-shadow: 0px 0px !important;
-  }
-
-  #urlbar-background {
-    background-color: white !important;
-  }
-  
-  #titlebar, #nav-bar, #PersonalToolbar {
-    background-color: white !important;
-  }
-
-  #tabbrowser-tabs, #TabsToolbar, .toolbar-items, #TabsToolbar-customization-target {
-    background-color: white !important;
-  }
+#urlbar-input-container:is([focused="true"], [open]) {
+  text-shadow: none !important;
+  box-shadow: 0px 0px !important;
 }
 
 /* remove outline colour around url bar */
@@ -65,9 +31,72 @@
   outline: none !important;
 }
 
-/* change font! */
+
+/* change font */
 #urlbar {
   font-family: "BlexMono Nerd Font Mono" !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   font-size: 14px !important;
+}
+
+/* INFO: tabs */
+/* fix tab bar height */
+.tab-background {
+  margin: 0 !important;
+  padding: 0 !important;
+  --tab-border-radius: 0 !important;
+}
+
+.tabbrowser-tab {
+  height: 24px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-family: "IBM Plex Sans" !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  color: #F5F5FA !important;
+}
+
+#tabbrowser-arrowscrollbox {
+  min-height: 24px !important;
+}
+
+#tabbrowser-tabs {
+  min-height: 24px !important;
+}
+
+.tabbrowser-tab {
+  --tab-selected-bgcolor: #3E3E5C !important;
+  background-color: #15151F !important;
+}
+
+.tab-background {
+  background-image: none !important;
+}
+
+.tab-icon-image {
+  height: 14px !important;
+  width: 14px !important;
+}
+
+/* TODO: fix :sob */
+.tabbrowser-tab[selected="true"] > .tab-text,
+.tabbrowser-tab[selected="true"] > .tab-label {
+  font-weight: 500 !important;
+}
+
+/* .tabbrowser-tab[selected="true"] > .tab-background {
+  background-color: #2B2B40 !important;
+  background-image: none !important;
+} */
+
+
+#nav-bar {
+  background-color: #2B2B40 !important;
+  background-image: none !important;
+}
+
+#urlbar-background {
+  background-color: #15151F !important;
 }
