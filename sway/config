@@ -72,7 +72,7 @@ bindsym Control+Shift+$mod+3    exec grim -g "$(slurp -o)" - | swappy -f - -o "~
 bindsym Control+Shift+4         exec grim -g "$(slurp)" - | wl-copy -t image/png
 bindsym Control+Shift+$mod+4    exec grim -g "$(slurp)" - | swappy -f - -o "~/.screenshot.png"
 
-bindsym Control+Shift+5         exec wfr="$RANDOM" && wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f "~/.recording"${wfr}".mp4" && echo -n "file:///home/tim/.recording.mp4" | wl-copy -t text/uri-list && rm "~/.recording"${wfr}".mp4"
+bindsym Control+Shift+5         exec wfr="$RANDOM" && wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f "/home/tim/.recording""${wfr}"".mp4" && echo -n "file:///home/tim/.recording""${wfr}"".mp4" | wl-copy -t text/uri-list && rm "~/.recording"${wfr}".mp4"
 bindsym Control+Shift+$mod+5    exec foot wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f "~/.recording.mp4" && pcmanfm ~/
 
 
