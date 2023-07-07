@@ -120,6 +120,10 @@ require("packer").startup(function(use)
 		end,
 	})
 
+	-- emmet
+	use('mattn/emmet-vim')
+
+
 	-- colour colours
 	use {
 		"norcalli/nvim-colorizer.lua",
@@ -213,7 +217,7 @@ require("packer").startup(function(use)
 	use("luukvbaal/stabilize.nvim")
 
 	use({
-		"TimUntersberger/neogit",
+		"NeogitOrg/neogit",
 		requires = "nvim-lua/plenary.nvim",
 		config = function()
 			local neogit = require("neogit")
@@ -708,6 +712,16 @@ require("packer").startup(function(use)
 				on_attach = on_attach,
 				filetypes = { "swift" }, -- Don't touch my C! >:(
 			})
+			lspconfig.emmet_ls.setup {
+				capabilities = capabilities,
+				on_attach = on_attach,
+                cmd = {'emmet-language-server', '--stdio'},
+                filetypes = {
+                    'html', 'typescriptreact', 'javascriptreact', 'javascript',
+                    'typescript', 'javascript.jsx', 'typescript.tsx', 'css', 'svelte'
+                },
+                -- root_dir = util.root_pattern("package.json", ".git"),
+			}
 		end,
 	})
 	use({
