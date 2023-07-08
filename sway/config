@@ -49,7 +49,8 @@ exec {
     rm /home/tim/.local/share/clipman.json
     wl-paste -t text --watch clipman store --no-persist
 
-    rm /home/tim/.recording*
+    rm /home/tim/.recording* /home/tim/.python_history /home/tim/.mupdf.history /home/tim/.histfile
+    rm -Rf /home/tim/.npm
 }
 
 
