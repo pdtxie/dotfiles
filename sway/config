@@ -46,8 +46,10 @@ exec {
     gentoo-pipewire-launcher &
 
     # clipman
-    rm ~/.local/share/clipman.json
+    rm /home/tim/.local/share/clipman.json
     wl-paste -t text --watch clipman store --no-persist
+
+    rm /home/tim/.recording*
 }
 
 
@@ -74,7 +76,7 @@ bindsym Control+Shift+$mod+3    exec grim -g "$(slurp -o)" - | swappy -f - -o "~
 bindsym Control+Shift+4         exec grim -g "$(slurp)" - | wl-copy -t image/png
 bindsym Control+Shift+$mod+4    exec grim -g "$(slurp)" - | swappy -f - -o "~/.screenshot.png"
 
-bindsym Control+Shift+5         exec wfr="$RANDOM" && wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f "/home/tim/.recording""${wfr}"".mp4" && echo -n "file:///home/tim/.recording""${wfr}"".mp4" | wl-copy -t text/uri-list && rm "~/.recording""${wfr}"".mp4"
+bindsym Control+Shift+5         exec wfr="$RANDOM" && wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f "/home/tim/.recording""${wfr}"".mp4" && echo -n "file:///home/tim/.recording""${wfr}"".mp4" | wl-copy -t text/uri-list
 bindsym Control+Shift+$mod+5    exec wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -x yuv420p -g "$(slurp)" -f "/home/tim/.recording.mp4" && $guifm "/home/tim"
 
 

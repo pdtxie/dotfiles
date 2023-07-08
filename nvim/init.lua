@@ -707,11 +707,13 @@ require("packer").startup(function(use)
 					on_attach(c, b)
 				end,
 			})
+
 			lspconfig.sourcekit.setup({
 				capabilities = capabilities,
 				on_attach = on_attach,
 				filetypes = { "swift" }, -- Don't touch my C! >:(
 			})
+
 			lspconfig.emmet_ls.setup {
 				capabilities = capabilities,
 				on_attach = on_attach,
@@ -722,6 +724,28 @@ require("packer").startup(function(use)
                 },
                 -- root_dir = util.root_pattern("package.json", ".git"),
 			}
+
+            lspconfig.tsserver.setup {
+                cmd = {"typescript-language-server", "--stdio"},
+                filetypes = {
+                    "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"
+                },
+                init_options = {
+                    hostInfo = "neovim"
+                },
+                root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")
+            }
+
+			lspconfig.svelte.setup {
+				on_attach = on_attach,
+				cmd = {'svelteserver', '--stdio'},
+				filetypes = {
+					'svelte'
+				},
+				root_dir = require("lspconfig.util").root_pattern("package.json", ".git")
+			}
+
+
 		end,
 	})
 	use({
