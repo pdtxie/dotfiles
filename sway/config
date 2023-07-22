@@ -249,22 +249,14 @@ input type:keyboard {
 input * {
     accel_profile adaptive
     scroll_factor 1.5
-
-    # tap enabled
-    # natural_scroll enabled
-    # click_method clickfinger
-    # scroll_method two_finger
 }
 
-# input "76:613:Tim_Xie___s_Magic_Trackpad_Mouse" {
-#     tap enabled
-# }
+input "76:613:Apple_Inc._Magic_Trackpad_2" {
+    tap enabled
+    natural_scroll enabled
+    click_method clickfinger
+    scroll_method two_finger
+    middle_emulation enabled
 
-# input * {
-#     click_method clickfinger
-#     middle_emulation enabled
-#     tap enabled
-#     natural_scroll enabled
-#     accel_profile adaptive
-#     pointer_accel 0.5
-# }
+    scroll_factor 0.5
+}
