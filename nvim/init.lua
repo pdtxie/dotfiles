@@ -34,6 +34,7 @@ vim.keymap.set("v", "<C-c>", '"+y<cr>')
 vim.keymap.set({"v", "n"}, "<C-a>", "ggVG")
 vim.keymap.set("i", "<C-a>", "<esc>ggVG")
 
+vim.keymap.set("n", "<space>e", '<cmd>lua vim.diagnostic.open_float()<CR>')
 
 if vim.fn.has("termguicolors") == 1 then
 	vim.o.termguicolors = true
@@ -657,7 +658,7 @@ require("packer").startup(function(use)
 				vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 				vim.keymap.set("n", "K", Peek, bufopts)
 				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-				-- vim.keymap.set("n", "<C-K>", vim.lsp.buf.signature_help, bufopts)
+				vim.keymap.set("n", "gh", vim.lsp.buf.signature_help, bufopts)
 				vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
 				--				vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 				vim.keymap.set("n", "<space>rn", ":IncRename ", bufopts)
@@ -699,7 +700,7 @@ require("packer").startup(function(use)
 			})
 			lspconfig.clangd.setup({
 				capabilities = vim.tbl_extend("keep", capabilities, lsp_status.capabilities),
-				cmd = { "clangd", "--function-arg-placeholders=false" },
+				cmd = { "clangd", "--function-arg-placeholders=0" },
 				init_options = { clangdFileStatus = true },
 				handlers = lsp_status.extensions.clangd.setup(),
 				on_attach = function(c, b)
@@ -739,10 +740,14 @@ require("packer").startup(function(use)
 			lspconfig.svelte.setup {
 				on_attach = on_attach,
 				cmd = {'svelteserver', '--stdio'},
-				filetypes = {
-					'svelte'
-				},
+				filetypes = { 'svelte' },
 				root_dir = require("lspconfig.util").root_pattern("package.json", ".git")
+			}
+
+			lspconfig.prismals.setup {
+				on_attach = on_attach,
+				filetypes = { 'prisma' },
+				cmd = {'prisma-language-server', '--stdio'}
 			}
 
 

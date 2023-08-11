@@ -1,8 +1,13 @@
 export MOZ_ENABLE_WAYLAND=1
 export XDG_CURRENT_DESKTOP=sway
 path+=/opt/Bitwarden
+path+=/home/tim/emc/emsdk
+path+=/home/tim/emc/emsdk/upstream/emscripten
 export PATH
 export PROMPT="%F{blue}%~%f  "
+
+export EMDSK=/home/tim/emc/emsdk
+export EMDSK_NODE=/home/tim/emc/emsdk/node/16.20.0_64bit/bin/node
 
 # FONT="BlexMono Nerd Font Mono Semi-Bold 10"
 # export BEMOJI_PICKER_CMD=("bemenu" "-p" "\"bemoji\"" "-i" "-l" "20" "-H" "24" "--fn" "${FONT}" "--tf" "\"#BDBDDB\"" "--ff" "\"#BDBDDB\"" "--cf" "\"#BDBDDB\"" "--nf" "\"#F5F5FA\"" "--af" "\"#F5F5FA\"" "--hf" "\"#7A7AB8\"" "--tb" "\"#15151F\"" "--fb" "\"#15151F\"" "--nb" "\"#15151F\"" "--hb" "\"#15151F\"" "--ab" "\"#15151F\"")

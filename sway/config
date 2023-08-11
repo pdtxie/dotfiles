@@ -49,7 +49,7 @@ exec {
     rm /home/tim/.local/share/clipman.json
     wl-paste -t text --watch clipman store --no-persist
 
-    rm /home/tim/.recording* /home/tim/.python_history /home/tim/.mupdf.history /home/tim/.histfile
+    rm /home/tim/.recording* /home/tim/.python_history /home/tim/.mupdf.history /home/tim/.histfile /home/tim/.psql_history /home/tim/.node_repl_history
     rm -Rf /home/tim/.npm
 }
 
@@ -257,6 +257,8 @@ input "76:613:Apple_Inc._Magic_Trackpad_2" {
     click_method clickfinger
     scroll_method two_finger
     middle_emulation enabled
+
+    pointer_accel -0.1
 
     scroll_factor 0.5
 }
