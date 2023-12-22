@@ -41,7 +41,6 @@ vim.o.inccommand = "split"
 vim.opt.list = true
 vim.opt.smd = false
 
-
 -- custom keymaps
 vim.keymap.set({"n", "i"}, "<C-k>", "<cmd>move -2<cr>")
 vim.keymap.set({"n", "i"}, "<C-j>", "<cmd>move +1<cr>")
@@ -57,7 +56,7 @@ vim.keymap.set("v", "<C-c>", '"+y<cr>')
 vim.keymap.set({"v", "n"}, "<C-a>", "ggVG")
 vim.keymap.set("i", "<C-a>", "<esc>ggVG")
 
-vim.keymap.set({"n", "i"}, "<leader>80", toggle_colourcolumn())
+vim.keymap.set("n", "<leader>80", toggle_colourcolumn())
 
 
 if vim.fn.has("termguicolors") == 1 then
@@ -110,6 +109,9 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 
+-- git-blame, disabled
+vim.g.gitblame_enabled = 0
+
 
 require("packer").startup(function(use)
     use("wbthomason/packer.nvim") -- Package manager
@@ -126,6 +128,9 @@ require("packer").startup(function(use)
     -- vim.cmd[[colorscheme colorscheme]]
     -- end})
 
+
+    -- git blame
+    use('f-person/git-blame.nvim')
 
     -- comment plugin
     use({
