@@ -1,0 +1,64 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 4,
+      "subtext" : {
+        "size" : 11,
+        "colorSelected" : "#F5F5FAFF",
+        "font" : "System Light",
+        "color" : "#79797DFF"
+      },
+      "shortcut" : {
+        "size" : 12,
+        "colorSelected" : "#F5F5FAFF",
+        "font" : "System",
+        "color" : "#79797DFF"
+      },
+      "backgroundSelected" : "#2B2B40FF",
+      "text" : {
+        "size" : 18,
+        "colorSelected" : "#F5F5FAFF",
+        "font" : "System",
+        "color" : "#DCDCE0FF"
+      },
+      "iconPaddingHorizontal" : 3,
+      "roundness" : 0,
+      "paddingVertical" : 3,
+      "iconSize" : 32
+    },
+    "search" : {
+      "backgroundSelected" : "#2B2B40FF",
+      "paddingHorizontal" : 5,
+      "spacing" : 0,
+      "text" : {
+        "size" : 32,
+        "colorSelected" : "#F5F5FAFF",
+        "font" : "BlexMono Nerd Font Mono",
+        "color" : "#F5F5FAFF"
+      },
+      "background" : "#15151FFF",
+      "roundness" : 0,
+      "paddingVertical" : 3
+    },
+    "window" : {
+      "color" : "#15151FFF",
+      "paddingHorizontal" : 0,
+      "width" : 559,
+      "borderPadding" : 0,
+      "borderColor" : "#11111BFF",
+      "blur" : 15,
+      "roundness" : 4,
+      "paddingVertical" : 0
+    },
+    "credit" : "Tim",
+    "separator" : {
+      "color" : "#6C7086FF",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#6C7086FF",
+      "thickness" : 2
+    },
+    "name" : "Blazer"
+  }
+}
