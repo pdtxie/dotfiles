@@ -118,15 +118,18 @@ require("packer").startup(function(use)
 
     use("lewis6991/impatient.nvim") -- Plugin cache
 
-    -- some lush + shipwright (colour stuff)
-    -- use("rktjmp/lush.nvim")
-    -- use("rktjmp/shipwright.nvim")
+    -- NOTE: colour stuff ----------------------------------- (lush/shipwright)
+
+    use("rktjmp/lush.nvim")
+    use("rktjmp/shipwright.nvim")
 
     -- use({"~/exported-color/lush-template", config = function() vim.cmd[[colorscheme lush_template]] end})
 
     -- use({"./lua/colorscheme", config = function()
     -- vim.cmd[[colorscheme colorscheme]]
     -- end})
+    
+    -- NOTE: colour stuff ends ------------------------------
 
 
     -- git blame
