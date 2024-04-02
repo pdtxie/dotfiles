@@ -20,9 +20,9 @@ local dark_green = '#253725'
 local dark_cyan = '#253737'
 
 local white = '#F5F5FA'
-local light_grey = '#DCDCE0'
+local light_grey = '#262626'
 local grey = '#7A7A7D'
-local dark_grey = '#262626'
+local dark_grey = '#DCDCE0'
 
 local background = '#15151F'
 local background2 = '#2B2B40'
