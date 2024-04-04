@@ -20,14 +20,14 @@ local dark_green = '#253725'
 local dark_cyan = '#253737'
 
 local white = '#F5F5FA'
-local light_grey = '#262626'
+local light_grey = '#DCDCE0'
 local grey = '#7A7A7D'
-local dark_grey = '#DCDCE0'
+local dark_grey = '#262626'
 
-local background = '#15151F'
-local background2 = '#2B2B40'
-local background3 = '#3E3E5C'
-local background4 = '#55557D'
+local background = '#0C0C12'
+local background2 = '#15151F'
+local background3 = '#2B2B40'
+local background4 = '#3E3E5C'
 
 local lush = require('lush')
 local hsl = lush.hsl

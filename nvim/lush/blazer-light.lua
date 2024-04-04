@@ -12,22 +12,22 @@ local light_yellow = '#B8B87A'
 local light_green = '#7AB87A'
 local light_cyan = '#7AB8B8'
 
-local dark_blue = '#BDBDDB'
-local dark_magenta = '#DBBDDB'
-local dark_red = '#DBBDBD'
-local dark_yellow = '#DBDBBD'
-local dark_green = '#BDDBBD'
-local dark_cyan = '#BDDBDB'
+local dark_blue = '#E4E4F1'
+local dark_magenta = '#F1E4F1'
+local dark_red = '#F1E4E4'
+local dark_yellow = '#F1F1E4'
+local dark_green = '#E4F1E4'
+local dark_cyan = '#E4F1F1'
 
 local white = '#0C0C12'
 local light_grey = '#262626'
 local grey = '#7A7A7D'
 local dark_grey = '#DCDCE0'
 
-local background = '#EEEEF5'
-local background2 = '#E4E4ED'
-local background3 = '#D8D8E3'
-local background4 = '#CECEDB'
+local background = '#F5F5FA'
+local background2 = '#EEEEF5'
+local background3 = '#E4E4ED'
+local background4 = '#D8D8E3'
 
 local lush = require('lush')
 local hsl = lush.hsl
@@ -45,9 +45,9 @@ local theme = lush(function(injected_functions)
     CursorColumn { bg = background2 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine   { bg = background2 }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = cyan }, -- Directory names (and other special names in listings)
-    DiffAdd      { bg = dark_green }, -- Diff mode: Added line |diff.txt|
-    DiffChange   { bg = dark_yellow }, -- Diff mode: Changed line |diff.txt|
-    DiffDelete   { bg = dark_red }, -- Diff mode: Deleted line |diff.txt|
+    DiffAdd      { fg = white, bg = dark_green }, -- Diff mode: Added line |diff.txt|
+    DiffChange   { fg = white, bg = dark_yellow }, -- Diff mode: Changed line |diff.txt|
+    DiffDelete   { fg = white, bg = dark_red }, -- Diff mode: Deleted line |diff.txt|
     DiffText     { bg = dark_red, fg = red }, -- Diff mode: Changed text within a changed line |diff.txt|
     -- EndOfBuffer  { }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- Cursor in a focused terminal
