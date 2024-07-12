@@ -39,9 +39,9 @@ local theme = lush(function(injected_functions)
     -- neovim
     ColorColumn  { bg = background2 }, -- Columns set with 'colorcolumn'
     Conceal      { bg = background3 }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-    -- Cursor       { }, -- Character under the cursor
-    -- lCursor      { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
-    -- CursorIM     { }, -- Like Cursor, but used when in IME mode |CursorIM|
+    Cursor       { bg = background, fg = white }, -- Character under the cursor
+    lCursor      { bg = background, fg = light_grey }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
+    CursorIM     { bg = background, fg = white }, -- Like Cursor, but used when in IME mode |CursorIM|
     CursorColumn { bg = background2 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine   { bg = background2 }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = cyan }, -- Directory names (and other special names in listings)
@@ -133,12 +133,12 @@ local theme = lush(function(injected_functions)
     Tag            { fg = light_grey }, --   You can use CTRL-] on this
     Delimiter      { fg = light_grey }, --   Character that needs attention
     SpecialComment { fg = light_grey }, --   Special things inside a comment (e.g. '\n')
-    Debug          { fg = light_grey }, --   Debugging statements
+    Debug          { bg = light_red, fg = dark_grey }, --   Debugging statements
 
     Underlined     { gui = "underline" }, -- Text that stands out, HTML links
     Ignore         { fg = background }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
-    Error          { bg = red, fg = white }, -- Any erroneous construct
-    Todo           { bg = yellow, fg = white }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Error          { bg = light_red, fg = background }, -- Any erroneous construct
+    Todo           { bg = light_yellow, fg = background }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 
     -- lsp client
@@ -165,51 +165,51 @@ local theme = lush(function(injected_functions)
 
 
     -- treesitter
-    -- sym"@text.literal"      { }, -- Comment
-    -- sym"@text.reference"    { }, -- Identifier
-    -- sym"@text.title"        { }, -- Title
-    -- sym"@text.uri"          { }, -- Underlined
-    -- sym"@text.underline"    { }, -- Underlined
-    -- sym"@text.todo"         { }, -- Todo
-    -- sym"@comment"           { }, -- Comment
-    -- sym"@punctuation"       { }, -- Delimiter
-    -- sym"@constant"          { }, -- Constant
-    -- sym"@constant.builtin"  { }, -- Special
-    -- sym"@constant.macro"    { }, -- Define
-    -- sym"@define"            { }, -- Define
-    -- sym"@macro"             { }, -- Macro
-    -- sym"@string"            { }, -- String
-    -- sym"@string.escape"     { }, -- SpecialChar
-    -- sym"@string.special"    { }, -- SpecialChar
-    -- sym"@character"         { }, -- Character
-    -- sym"@character.special" { }, -- SpecialChar
-    -- sym"@number"            { }, -- Number
-    -- sym"@boolean"           { }, -- Boolean
-    -- sym"@float"             { }, -- Float
-    -- sym"@function"          { }, -- Function
-    -- sym"@function.builtin"  { }, -- Special
-    -- sym"@function.macro"    { }, -- Macro
-    -- sym"@parameter"         { }, -- Identifier
-    -- sym"@method"            { }, -- Function
-    -- sym"@field"             { }, -- Identifier
-    -- sym"@property"          { }, -- Identifier
-    -- sym"@constructor"       { }, -- Special
-    -- sym"@conditional"       { }, -- Conditional
-    -- sym"@repeat"            { }, -- Repeat
-    -- sym"@label"             { }, -- Label
-    -- sym"@operator"          { }, -- Operator
-    -- sym"@keyword"           { }, -- Keyword
-    -- sym"@exception"         { }, -- Exception
-    -- sym"@variable"          { }, -- Identifier
-    -- sym"@type"              { }, -- Type
-    -- sym"@type.definition"   { }, -- Typedef
-    -- sym"@storageclass"      { }, -- StorageClass
-    -- sym"@structure"         { }, -- Structure
-    -- sym"@namespace"         { }, -- Identifier
-    -- sym"@include"           { }, -- Include
-    -- sym"@preproc"           { }, -- PreProc
-    -- sym"@debug"             { }, -- Debug
-    -- sym"@tag"               { }, -- Tag
+    sym"@text.literal"      { Comment }, -- Comment
+    sym"@text.reference"    { Identifier }, -- Identifier
+    sym"@text.title"        { Title }, -- Title
+    sym"@text.uri"          { Underlined }, -- Underlined
+    sym"@text.underline"    { Underlined }, -- Underlined
+    sym"@text.todo"         { Todo }, -- Todo
+    sym"@comment"           { Comment }, -- Comment
+    sym"@punctuation"       { Delimiter }, -- Delimiter
+    sym"@constant"          { Constant }, -- Constant
+    sym"@constant.builtin"  { Special }, -- Special
+    sym"@constant.macro"    { Define }, -- Define
+    sym"@define"            { Define }, -- Define
+    sym"@macro"             { Macro }, -- Macro
+    sym"@string"            { String }, -- String
+    sym"@string.escape"     { SpecialChar }, -- SpecialChar
+    sym"@string.special"    { SpecialChar }, -- SpecialChar
+    sym"@character"         { Character }, -- Character
+    sym"@character.special" { SpecialChar }, -- SpecialChar
+    sym"@number"            { Number }, -- Number
+    sym"@boolean"           { Boolean }, -- Boolean
+    sym"@float"             { Float }, -- Float
+    sym"@function"          { Function }, -- Function
+    sym"@function.builtin"  { Special }, -- Special
+    sym"@function.macro"    { Macro }, -- Macro
+    sym"@parameter"         { Identifier }, -- Identifier
+    sym"@method"            { Function }, -- Function
+    sym"@field"             { Identifier }, -- Identifier
+    sym"@property"          { Identifier }, -- Identifier
+    sym"@constructor"       { Special }, -- Special
+    sym"@conditional"       { Conditional }, -- Conditional
+    sym"@repeat"            { Repeat }, -- Repeat
+    sym"@label"             { Label }, -- Label
+    sym"@operator"          { Operator }, -- Operator
+    sym"@keyword"           { Keyword }, -- Keyword
+    sym"@exception"         { Exception }, -- Exception
+    sym"@variable"          { Identifier }, -- Identifier
+    sym"@type"              { Type }, -- Type
+    sym"@type.definition"   { Typedef }, -- Typedef
+    sym"@storageclass"      { StorageClass }, -- StorageClass
+    sym"@structure"         { Structure }, -- Structure
+    sym"@namespace"         { Identifier }, -- Identifier
+    sym"@include"           { Include }, -- Include
+    sym"@preproc"           { PreProc }, -- PreProc
+    sym"@debug"             { Debug }, -- Debug
+    sym"@tag"               { Tag }, -- Tag
 }
 end)
 

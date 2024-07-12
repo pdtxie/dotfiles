@@ -1,4 +1,4 @@
-local colorscheme = require("blazer-light")
+local colorscheme = require("blazer-dark")
 local lushwright = require("shipwright.transform.lush")
 
 -- we start by calling run and giving it our colorscheme as the first argument.
