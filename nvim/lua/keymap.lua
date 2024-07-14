@@ -23,10 +23,4 @@ vim.keymap.set("i", "<C-a>", "<esc>ggVG")
 
 vim.keymap.set("n", "<leader>80", toggle_colourcolumn())
 
--- telescope keybindings
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>ft', "<cmd>TodoTelescope<CR>", {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+-- telescope keybindings in telescope config file

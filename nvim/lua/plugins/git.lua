@@ -2,8 +2,10 @@ return {
 	{
 		'f-person/git-blame.nvim',
 		config = function()
-			vim.g.gitblame_enabled = 0
-		end
+			vim.keymap.set('n', '<leader>gb', "<cmd>GitBlameToggle<CR>", {})
+			vim.g.gitblame_message_template = '\t<author> | <date> | <summary> | <sha>'
+			vim.g.gitblame_enabled = false
+		end,
 	},
 	{
 		"NeogitOrg/neogit",
