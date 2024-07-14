@@ -36,77 +36,39 @@ local indent_cyan = '#253737'
 local blazer = {}
 
 blazer.normal = {
-    a = { bg = blue, fg = bg, gui = 'bold' },
-    b = { bg = bg3, fg = accent_blue },
+    a = { bg = bg4, fg = blue, gui = 'bold' },
+    b = { bg = bg3, fg = accent_grey },
     c = { bg = bg2, fg = base }
 }
 
 blazer.insert = {
-    a = { bg = green, fg = bg, gui = 'bold' },
-    b = { bg = bg3, fg = accent_green },
+    a = { bg = bg4, fg = cyan, gui = 'bold' },
+    b = { bg = bg3, fg = accent_grey },
     c = { bg = bg2, fg = base }
 }
 
 blazer.replace = {
-    a = { bg = red, fg = bg, gui = 'bold' },
-    b = { bg = bg3, fg = accent_red },
+    a = { bg = bg4, fg = red, gui = 'bold' },
+    b = { bg = bg3, fg = accent_grey },
     c = { bg = bg2, fg = base }
 }
 
 blazer.visual = {
-    a = { bg = magenta, fg = bg, gui = 'bold' },
-    b = { bg = bg3, fg = accent_magenta },
+    a = { bg = bg4, fg = magenta, gui = 'bold' },
+    b = { bg = bg3, fg = accent_grey },
     c = { bg = bg2, fg = base }
 }
 
 blazer.command = {
-    a = { bg = base, fg = bg, gui = 'bold' },
+    a = { bg = bg4, fg = base, gui = 'bold' },
     b = { bg = bg3, fg = base },
     c = { bg = bg2, fg = base }
 }
 
 blazer.inactive = {
-    a = { bg = grey, fg = bg, gui = 'bold' },
-    b = { bg = bg3, fg = grey },
+    a = { bg = bg4, fg = grey, gui = 'bold' },
+    b = { bg = bg3, fg = accent_grey },
     c = { bg = bg2, fg = grey }
 }
-
-
---[[ blazer.normal = {
-    a = { bg = blue, fg = bg, gui = 'bold' },
-    b = { bg = indent_blue, fg = accent_blue },
-    c = { bg = indent_blue, fg = base }
-}
-
-blazer.insert = {
-    a = { bg = green, fg = bg, gui = 'bold' },
-    b = { bg = indent_green, fg = accent_green },
-    c = { bg = indent_green, fg = base }
-}
-
-blazer.replace = {
-    a = { bg = red, fg = bg, gui = 'bold' },
-    b = { bg = indent_red, fg = accent_red },
-    c = { bg = indent_red, fg = base }
-}
-
-blazer.visual = {
-    a = { bg = magenta, fg = bg, gui = 'bold' },
-    b = { bg = indent_magenta, fg = accent_magenta },
-    c = { bg = indent_magenta, fg = base }
-}
-
-blazer.command = {
-    a = { bg = base, fg = bg, gui = 'bold' },
-    b = { bg = bg2, fg = base },
-    c = { bg = bg2, fg = base }
-}
-
-blazer.inactive = {
-    a = { bg = grey, fg = bg, gui = 'bold' },
-    b = { bg = bg2, fg = grey },
-    c = { bg = bg2, fg = grey }
-} ]]
-
 
 return blazer

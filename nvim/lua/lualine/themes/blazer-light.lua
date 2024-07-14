@@ -42,7 +42,7 @@ blazer.normal = {
 }
 
 blazer.insert = {
-    a = { bg = bg4, fg = green, gui = 'bold' },
+    a = { bg = bg4, fg = cyan, gui = 'bold' },
     b = { bg = bg3, fg = accent_grey },
     c = { bg = bg2, fg = base }
 }

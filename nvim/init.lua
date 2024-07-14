@@ -1,4 +1,4 @@
-vim.cmd([[ colorscheme blazer-light ]])
+vim.cmd([[ colorscheme blazer-dark ]])
 
 require("config.lazy")
 
