@@ -129,12 +129,12 @@ local colors = {
 	Whitespace = {fg = "#D8D8E3"},
 	WildMenu = {fg = "#7AB8B8", bg = "#BDDBDB"},
 	Winseparator = {fg = "#E4E4ED"},
-	lCursor = {fg = "#D8D8E3", bg = "#0C0C12"}
+	lCursor = {fg = "#D8D8E3", bg = "#0C0C12"},
 }
 
 vim.cmd("highlight clear")
 vim.cmd("set t_Co=256")
-vim.cmd("let g:colors_name='blazer-light.lua'")
+vim.g.colors_name = "blazer-light"
 
 for group, attrs in pairs(colors) do
   vim.api.nvim_set_hl(0, group, attrs)
