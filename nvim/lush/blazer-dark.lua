@@ -149,7 +149,7 @@ local theme = lush(function(injected_functions)
     DiagnosticError            { fg = red } , -- Used as the base highaccent group. Other Diagnostic highaccents link to this by default (except Underline)
     DiagnosticWarn             { fg = yellow } , -- Used as the base highaccent group. Other Diagnostic highaccents link to this by default (except Underline)
     DiagnosticInfo             { fg = cyan } , -- Used as the base highaccent group. Other Diagnostic highaccents link to this by default (except Underline)
-    DiagnosticHint             { fg = accent_grey } , -- Used as the base highaccent group. Other Diagnostic highaccents link to this by default (except Underline)
+    DiagnosticHint             { fg = grey } , -- Used as the base highaccent group. Other Diagnostic highaccents link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
@@ -157,7 +157,7 @@ local theme = lush(function(injected_functions)
     DiagnosticUnderlineError   { fg = red, gui = "underline" } , -- Used to underline "Error" diagnostics.
     DiagnosticUnderlineWarn    { fg = yellow, gui = "underline" } , -- Used to underline "Warn" diagnostics.
     DiagnosticUnderlineInfo    { fg = cyan, gui = "underline" } , -- Used to underline "Info" diagnostics.
-    DiagnosticUnderlineHint    { fg = accent_grey, gui = "underline"} , -- Used to underline "Hint" diagnostics.
+    DiagnosticUnderlineHint    { fg = grey, gui = "underline"} , -- Used to underline "Hint" diagnostics.
     -- DiagnosticFloatingError    { } , -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
     -- DiagnosticFloatingWarn     { } , -- Used to color "Warn" diagnostic messages in diagnostics float.
     -- DiagnosticFloatingInfo     { } , -- Used to color "Info" diagnostic messages in diagnostics float.

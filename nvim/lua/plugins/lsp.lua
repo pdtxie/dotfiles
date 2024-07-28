@@ -282,20 +282,20 @@ return {
 				-- Mappings.
 				-- See `:help vim.lsp.*` for documentation on any of the below functions
 				local bufopts = { noremap = true, silent = true, buffer = bufnr }
-				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-				vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-				vim.keymap.set("n", "K", Peek, bufopts)
-				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+				-- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+				-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+				-- vim.keymap.set("n", "K", Peek, bufopts)
+				-- vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
 				-- vim.keymap.set("n", "<C-K>", vim.lsp.buf.signature_help, bufopts)
-				vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
-				--				vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-				vim.keymap.set("n", "<space>rn", ":IncRename ", bufopts)
-				vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
-				vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-				--vim.keymap.set('nv', '=', vim.lsp.buf.format, bufopts)
-				vim.keymap.set("n", "<leader>ca", require("code_action_menu").open_code_action_menu, bufopts)
+				-- vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
+				-- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+				-- vim.keymap.set("n", "<space>rn", ":IncRename ", bufopts)
+				-- vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
+				-- vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+				-- vim.keymap.set('nv', '=', vim.lsp.buf.format, bufopts)
+				-- vim.keymap.set("n", "<leader>ca", require("code_action_menu").open_code_action_menu, bufopts)
 
-				vim.keymap.set("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
+				vim.keymap.set("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<CR>", bufopts)
 			end
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -378,6 +378,13 @@ return {
 				on_attach = on_attach,
 				filetypes = { 'prisma' },
 				cmd = {'prisma-language-server', '--stdio'}
+			}
+
+			lspconfig.gopls.setup {
+				filetypes = { "go", "gomod", "gowork", "gotmpl" },
+				root_dir = require("lspconfig.util").root_pattern("go.work", "go.mod", ".git"),
+				single_file_support = true,
+				cmd = { "gopls" }
 			}
 		end,
 	}

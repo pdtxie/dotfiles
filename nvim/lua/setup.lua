@@ -11,12 +11,16 @@ vim.o.undofile = true
 vim.o.undodir = vim.fn.stdpath("data") .. "/undo" -- persistent undo/redo
 vim.o.undolevels = 1000
 vim.o.undoreload = 10000
-vim.o.title = true
 vim.o.timeoutlen = 300
 vim.go.laststatus = 3 -- 1 statusline for every window
 vim.o.inccommand = "split"
 vim.opt.list = true
 vim.opt.smd = false
+
+vim.opt.title = true
+vim.opt.titlestring = "[nvim] %t"
+
+vim.cmd([[ set invlist ]])  -- TODO: find the actual api command...
 
 if vim.fn.has("termguicolors") == 1 then
 	vim.o.termguicolors = true

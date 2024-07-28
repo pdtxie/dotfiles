@@ -24,3 +24,5 @@ vim.keymap.set("i", "<C-a>", "<esc>ggVG")
 vim.keymap.set("n", "<leader>80", toggle_colourcolumn())
 
 -- telescope keybindings in telescope config file
+
+vim.keymap.set("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<CR>", bufopts)

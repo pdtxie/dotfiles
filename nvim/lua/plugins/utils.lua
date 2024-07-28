@@ -29,6 +29,12 @@ return {
 		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
 			require("todo-comments").setup({
+				keywords = {
+					NOTE = { color = "hint" }
+				},
+				colors = {
+					hint = { "DiagnosticHint" }  -- NOTE:
+				}
 				-- your configuration comes here
 				-- or leave it empty to use the default settings
 				-- refer to the configuration section below
