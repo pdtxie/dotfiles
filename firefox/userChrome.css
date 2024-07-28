@@ -1,110 +1,287 @@
-/* INFO: general interface */
-/* remove firefox garbage */
 #pageActionSeparator,
 #pageActionButton,
 #toolbar-menubar,
 #tracking-protection-icon-container,
 #identity-icon-box,
-#star-button-box {
-  display: none !important;
+#star-button-box,
+.urlbar-search-button,
+.urlbar-go-button {
+	display: none !important;
 }
+
 
 /* remove buttons */
 #alltabs-button {
-  display: none;
-  visibility: hidden;
+	display: none;
+	visibility: hidden;
 }
 
-#urlbar-input-container, #remote-control-box {
-  box-shadow: 0;
+
+
+
+/* light/dark mode colours */
+@media(prefers-color-scheme: dark) {
+	* {
+		--base: #F5F5FA;
+
+		--accent_grey: #DCDCE0;
+		--grey: #7A7A7D;
+		--indent_grey: #262626;
+
+		--bg: #0C0C12;
+		--bg2: #15151F;
+		--bg3: #2B2B40;
+		--bg4: #3E3E5C;
+	}
 }
 
-#urlbar-input-container:is([focused="true"], [open]) {
-  text-shadow: none !important;
-  box-shadow: 0px 0px !important;
+@media(prefers-color-scheme: light) {
+	* {
+		--base: #0C0C12;
+
+		--accent_grey: #262626;
+		--grey: #7A7A7D;
+		--indent_grey: #DCDCE0;
+
+		--bg: #F5F5FA;
+		--bg2: #EEEEF5;
+		--bg3: #E4E4ED;
+		--bg4: #D8D8E3;
+	}
 }
 
 /* remove outline colour around url bar */
-#urlbar:is([focused="true"]) > #urlbar-background, #seachbar:focus-within {
-  box-shadow: none !important;
-  text-shadow: none !important;
-  outline: none !important;
-}
-
-
-/* change font */
-#urlbar {
-  font-family: "BlexMono Nerd Font Mono" !important;
-  font-weight: 500 !important;
-  font-size: 14px !important;
-}
-
-/* INFO: tabs */
-/* fix tab bar height */
-.tab-background {
-  margin: 0 !important;
-  padding: 0 !important;
-  --tab-border-radius: 0 !important;
-}
-
-.tabbrowser-tab {
-  height: 24px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-
-  font-family: "IBM Plex Sans" !important;
-  font-weight: 500 !important;
-  font-size: 13px !important;
-  color: #F5F5FA !important;
-}
-
-#tabbrowser-arrowscrollbox {
-  min-height: 24px !important;
-}
-
-#tabbrowser-tabs {
-  min-height: 24px !important;
-}
-
-.tabbrowser-tab {
-  --tab-selected-bgcolor: #3E3E5C !important;
-  background-color: #15151F !important;
-}
-
-.tab-background {
-  background-image: none !important;
-}
-
-.tab-icon-image {
-  height: 14px !important;
-  width: 14px !important;
-}
-
-/* TODO: fix :sob */
-.tabbrowser-tab[selected="true"] > .tab-text,
-.tabbrowser-tab[selected="true"] > .tab-label {
-  font-weight: 600 !important;
-}
-
-.tabbrowser-tab[selected="true"] {
-  font-weight: 600 !important;
-}
-
-:root[uidensity="compact"] {
-  --tab-min-height: 26px !important;
-}
-
-/* .tabbrowser-tab[selected="true"] > .tab-background {
-  background-color: #2B2B40 !important;
-  background-image: none !important;
-} */
-
-
-#nav-bar {
-  background-color: #2B2B40 !important;
-  background-image: none !important;
-}
-
 #urlbar-background {
-  background-color: #15151F !important;
+	box-shadow: none !important;
+	text-shadow: none !important;
+	outline: none !important;
+	border: none !important;
+}
+
+/* change font! */
+#urlbar {
+	font-family: "BlexMono Nerd Font Mono" !important;
+	font-weight: 500 !important;
+	font-size: 12px !important;
+}
+
+
+
+
+/* NOTE: tabs */
+#TabsToolbar, .titlebar-color, .toolbar-items, .browser-toolbar.toolbar-color, #tabbrowser-arrowscrollbox, .scrollbox-clip {
+	min-height: 17px !important;
+	height: 17px !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-background {
+	background-color: var(--bg4) !important;
+	height: 17px !important;
+	margin: 0 !important;
+	padding: 0 !important
+}
+
+.tab-background {
+	background-color: var(--bg3) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-text {
+	font-family: "BlexMono Nerd Font Mono" !important;
+	font-weight: 500 !important;
+	font-size: 13px !important;
+}
+
+
+.tabbrowser-tab {
+	border: none !important;
+	border-radius: 0 !important;
+	padding: 0 !important;
+	cursor: pointer !important;
+}
+
+.tabbrowser-tab * {
+	border-radius: 0 !important;
+}
+
+.titlebar-spacer {
+	width: 8px !important;
+}
+
+
+/* NOTE: tab */
+.tab-label-container, .tab-text, .tab-content, .tab-stack, .tab-background, .tab-loading-burst {
+	min-height: 17px !important;
+	height: 17px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	box-shadow: none !important;
+	border: none !important;
+	cursor: pointer !important;
+}
+
+.tab-icon-stack, .tab-icon-image {
+	height: 12px !important;
+	width: 12px !important;
+	margin-left: 2px !important;
+	margin-right: 10px !important;
+}
+
+.tab-text {
+	font-family: "BlexMono Nerd Font Mono" !important;
+	font-weight: 400 !important;
+	font-size: 13px !important;
+	line-height: normal !important;
+}
+
+.tab-loading-burst {
+	display: none !important;
+}
+
+
+/* NOTE: traffic light */
+.titlebar-buttonbox {
+	margin-left: 8px !important;
+}
+
+/* NOTE: url */
+#nav-bar-customization-target, #nav-bar {
+	height: 28px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	align-items: center !important;
+}
+
+#urlbar, #urlbar-container, .urlbar-input-container {
+	height: 28px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 0 !important;
+}
+
+.urlbar-input-box {
+	margin-right: 40vw !important;
+}
+
+#urlbar, .urlbar-input-box, #urlbar-container, .urlbar-input-container {
+	-moz-window-dragging: drag !important;
+}
+
+
+/* NOTE: buttons */
+.toolbarbutton-1, 
+.chromeclass-toolbar-additional,
+#PanelUI-menu-button,
+#tabbrowser-arrowscrollbox-periphery,
+.scrollbutton-up {
+	height: 17px !important;
+	width: 17px !important;
+	border-radius: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	margin-left: 2px !important;
+	margin-right: 2px !important;
+}
+
+.toolbarbutton-icon  {
+	height: 16px !important;
+	width: 16px !important;
+	border: none !important;
+	border-radius: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	padding: 2px !important;
+}
+
+.tab-close-button {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+#back-button {
+	margin-left: 75px !important;
+}
+
+.urlbarView {
+	border: none !important;
+	background-color: var(--bg2) !important;
+}
+
+
+
+
+
+
+#urlbar-input-container, #remote-control-box {
+	background-color: var(--bg) !important;
+	box-shadow: 0 !important;
+}
+
+#urlbar-input-container:is([focused="true"], [open]) {
+	background-color: var(--bg) !important;
+	text-shadow: none !important;
+	box-shadow: none !important;
+}
+
+#urlbar-background, #nav-bar {
+	background-color: var(--bg) !important;
+}
+
+#tabbrowser-tabs, #TabsToolbar, .toolbar-items, #TabsToolbar-customization-target {
+	background-color: var(--bg2) !important;
+}
+
+
+
+/* NOTE: move below (https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/tabs_on_bottom.css) */
+#toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,
+#TabsToolbar > .titlebar-buttonbox-container{
+	position: fixed;
+	display: block;
+	top: 0px;
+	right:0;
+	height: 28px;
+}
+
+.titlebar-buttonbox {
+	margin-top: 6px !important
+}
+
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+(-moz-gtk-csd-reversed-placement),
+(-moz-platform: macos){
+	.titlebar-buttonbox-container{ left:0; right: unset !important; }
+}
+
+#toolbar-menubar[inactive] > .titlebar-buttonbox-container{ opacity: 0 }
+
+#titlebar{
+	order: 2;
+	-moz-appearance: none !important;
+	appearance: none !important;
+	--tabs-navbar-shadow-size: 0px;
+}
+
+/* Re-order window and tab notification boxes */
+#navigator-toolbox > div{ display: contents }
+.global-notificationbox,
+#tab-notification-deck {
+	order: 2;
+}
+
+#TabsToolbar .titlebar-spacer{ display: none; }
+/* Also hide the toolbox bottom border which isn't at bottom with this setup */
+#navigator-toolbox::after{ display: none !important; }
+
+@media (-moz-gtk-csd-close-button) {
+	.titlebar-button {
+		flex-direction: column;
+	}
+}
+
+/* At Activated Menubar */
+:root:not([chromehidden~="menubar"], [sizemode="fullscreen"]) #toolbar-menubar:not([autohide="true"]) + #TabsToolbar > .titlebar-buttonbox-container {
+	display: block !important;
+}
+#toolbar-menubar:not([autohide="true"]) > .titlebar-buttonbox-container {
+	visibility: hidden;
 }
