@@ -1,6 +1,6 @@
 # dotfiles
 
-this project includes a [modified custom Minimal obsidian theme](https://github.com/pdtxie/blazer-obsidian/tree/main) and a [custom GTK3 theme](https://github.com/pdtxie/blazer-gtk3.0/tree/main)
+this project includes a [custom obsidian theme](https://github.com/pdtxie/blazer-obsidian) and a [custom GTK3 theme](https://github.com/pdtxie/blazer-gtk3.0)
 
 - colour scheme: blazer (theme files for nvim, sway, foot, gtk, etc were created manually)
 - font: IBM Plex Mono+Sans [(patched nerd font)](https://github.com/ryanoasis/nerd-fonts)
@@ -22,10 +22,10 @@ this project includes a [modified custom Minimal obsidian theme](https://github.
 ### NEOVIM
 ![nvim](https://github.com/pdtxie/dotfiles/assets/65262710/504339c6-2024-4224-aff1-3aae8834a46c)
 
-### [OBSIDIAN](https://github.com/pdtxie/blazer-obsidian/tree/main)
-![image](https://github.com/pdtxie/dotfiles/assets/65262710/d715ddff-7aba-4295-a51b-5e23b17164ba)
-
-![image](https://github.com/pdtxie/dotfiles/assets/65262710/95c10b09-94d0-4386-9450-52240d778fd9)
+### [OBSIDIAN](https://github.com/pdtxie/blazer-obsidian) (macos)
+<img width="1222" alt="Screenshot 2025-03-16 at 21 30 04" src="https://github.com/user-attachments/assets/d0f91918-7a3f-4bf3-af0c-5062001a0492" />
+<img width="1222" alt="Screenshot 2025-03-16 at 21 30 19" src="https://github.com/user-attachments/assets/86109c40-005d-488d-8630-ee2d8ee071ca" />
+<img width="1222" alt="Screenshot 2025-03-16 at 21 30 49" src="https://github.com/user-attachments/assets/9c54b4de-c81c-4461-94d0-8ed91af10385" />
 
 
 ## dependencies
