@@ -1,0 +1,24 @@
+font-family = "IBM Plex Mono Regular"
+
+foreground = #F5F5FA
+background = #0d0d0d
+# this is so stupid it needs to be >= 0d0d0d or the background is not dark.
+selection-foreground = #FFFFFF
+selection-background = #55557D
+
+palette = 0=#000000
+palette = 8=#262626
+palette = 1=#B87A7A
+palette = 9=#DBBDBD
+palette = 2=#7AB87A
+palette = 10=#BDDBBD
+palette = 3=#B8B87A
+palette = 11=#DBDBBD
+palette = 4=#7A7AB8
+palette = 12=#BDBDDB
+palette = 5=#B87AB8
+palette = 13=#DBBDDB
+palette = 6=#7AB8B8
+palette = 14=#BDDBDB
+palette = 7=#DCDCE0
+palette = 15=#F5F5FA
